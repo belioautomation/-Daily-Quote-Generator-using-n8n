@@ -1,0 +1,142 @@
+{
+  "name": "Daily Quote Generator",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "95c10d51-8996-40c9-8a61-f1c84a360c5b",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://zenquotes.io/api/random",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "41a74735-0269-42eb-bd83-b1db589c0465",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "41b86d34-50b6-4b88-a0b5-06a0216cfa0b",
+              "name": "message",
+              "value": "=🌅 Good Morning!  \n💬 Daily Inspirational Quote  \n\"{{ $json.q }}\" \n— {{$json.a}}  \n📅 {{$now.format('MMMM dd, yyyy')}}  \nHave an amazing day! 🚀  \n🤖 Generated automatically with n8n.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "e623d2c8-aadc-4306-ab4a-3a4f3164532f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "chatId": "5518864435",
+        "text": "={{ $json.message }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "813e3432-6cf3-4ca9-9be3-c6bc6cb15e78",
+      "name": "Send a text message",
+      "webhookId": "fa213363-7591-4e15-9692-ddc6b78f9c2f",
+      "credentials": {
+        "telegramApi": {
+          "id": "m4wbEKU2AAXnXL6V",
+          "name": "Daily Quote Generator"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Manila",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1,
+    "availableInMCP": false
+  },
+  "versionId": "cacd2586-c49b-4dff-8a6f-92ffb3f30e28",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "8109642ab6846a9cf1618de304921f5663481ec8cdaee6a52dd360d6de75a743"
+  },
+  "id": "uQXULZDNMMq3uMPI",
+  "tags": []
+}
