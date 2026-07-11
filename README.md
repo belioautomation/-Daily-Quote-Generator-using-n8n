@@ -1,43 +1,24 @@
 # 🌅 Daily Quote Generator using n8n
 
-An automated workflow built with **n8n** that retrieves a random inspirational quote from a free public API every day and sends it directly to **Telegram**.
+## 📌 Project Overview
 
-This project demonstrates scheduled automation, REST API integration, JSON parsing, data transformation, and Telegram bot notifications using only free services.
+Daily Quote Generator is an automated workflow built with **n8n**, the **DummyJSON API**, and **Telegram**. It retrieves a random inspirational quote each day, formats it into a readable message, and sends it directly to Telegram.
 
----
-
-## 📌 Overview
-
-This workflow automatically performs the following tasks:
-
-- Runs every day at a scheduled time.
-- Retrieves a random inspirational quote from a public API.
-- Formats the quote into a clean and readable message.
-- Sends the quote directly to Telegram.
+Built as part of my **30-Day n8n Automation Portfolio**, this project demonstrates scheduled automation, REST API integration, JSON data processing, and automated messaging using free services.
 
 ---
 
-## 🚀 Features
+## 🎯 Objectives
 
-- ⏰ Daily scheduled execution
-- 💬 Random inspirational quote
-- 📲 Telegram notification
-- 🌐 Free public API
-- 🔑 No API key required
-- 💯 Fully automated
-
----
-
-## 🛠 Tech Stack
-
-- n8n
-- HTTP Request
-- DummyJSON API
-- Telegram Bot API
+* Automate daily inspirational quote delivery
+* Integrate a public REST API with n8n
+* Format API responses into user-friendly messages
+* Deliver daily Telegram notifications
+* Build a portfolio-ready automation workflow
 
 ---
 
-## 📂 Workflow
+## 🏗️ Workflow Architecture
 
 ```text
 Schedule Trigger
@@ -54,11 +35,11 @@ Telegram
 
 ---
 
-## ⚙️ Workflow Explanation
+## ⚙️ Workflow Implementation
 
 ### 1. Schedule Trigger
 
-Automatically runs the workflow every day at the configured time.
+Runs the workflow automatically every day at a scheduled time.
 
 ---
 
@@ -66,21 +47,21 @@ Automatically runs the workflow every day at the configured time.
 
 Retrieves a random inspirational quote from the DummyJSON API.
 
-**API Endpoint**
+Example endpoint:
 
-```
+```text
 https://dummyjson.com/quotes/random
 ```
 
-**Method**
+Method:
 
-```
+```text
 GET
 ```
 
-**Authentication**
+Authentication:
 
-```
+```text
 None
 ```
 
@@ -90,9 +71,9 @@ None
 
 Formats the API response into a readable Telegram message.
 
-Example Output:
+Example:
 
-```
+```text
 🌅 Good Morning!
 
 💬 Daily Inspirational Quote
@@ -112,21 +93,33 @@ Have an amazing day! 🚀
 
 ### 4. Telegram
 
-Sends the formatted quote directly to your Telegram account.
+Sends the formatted quote directly to Telegram.
 
 ---
 
-## 📁 Project Structure
+## 🛠️ Technologies Used
 
-```
+* n8n
+* DummyJSON API
+* HTTP Request
+* Telegram Bot API
+
+---
+
+## 📁 Repository Structure
+
+```text
 Daily-Quote-Generator/
 │
 ├── README.md
 ├── workflow.json
-└── screenshots/
-    ├── workflow.png
-    ├── telegram-output.png
-    └── workflow-execution.png
+│
+├── screenshots/
+│   ├── workflow.png
+│   ├── telegram-output.png
+│   └── workflow-execution.png
+│
+└── assets/
 ```
 
 ---
@@ -135,75 +128,56 @@ Daily-Quote-Generator/
 
 Include the following screenshots:
 
-- Workflow Editor
-- Successful Workflow Execution
-- Telegram Output
-
-Example:
-
-```
-screenshots/
-    workflow.png
-    workflow-execution.png
-    telegram-output.png
-```
+* Complete Workflow
+* Workflow Execution
+* Telegram Output
 
 ---
 
-## 💡 Use Cases
+## 🚀 Key Features
 
-- Daily motivation
-- Morning productivity routine
-- Personal development
-- Telegram automation
-- Learning REST API integration with n8n
-- Portfolio automation project
-
----
-
-## 🔮 Future Improvements
-
-- Support multiple quote categories
-- Filter quotes by author
-- Save quotes to Google Sheets
-- Email daily quotes
-- Publish quotes to Discord or Slack
-- Generate AI-powered reflections for each quote
-- Support multilingual quotes
+* ✅ Scheduled Workflow Automation
+* ✅ Random Daily Quote Retrieval
+* ✅ REST API Integration
+* ✅ Telegram Notifications
+* ✅ JSON Data Processing
+* ✅ Fully Automated Workflow
+* ✅ Uses Free Public API
 
 ---
 
-## 📚 What I Learned
+## 🎓 Lessons Learned
 
-This project helped me gain hands-on experience with:
+Through this project, I gained experience in:
 
-- Workflow automation using n8n
-- REST API integration
-- JSON parsing
-- Data transformation
-- Telegram Bot integration
-- Scheduled workflows
-
----
-
-## 🏷 Skills Demonstrated
-
-- n8n
-- Workflow Automation
-- REST API
-- HTTP Request
-- JSON Parsing
-- Data Transformation
-- Telegram Bot API
-- Scheduled Automation
-- No-Code / Low-Code Development
+* Building scheduled automation workflows
+* Integrating REST APIs with n8n
+* Processing JSON responses
+* Formatting API data for messaging
+* Automating Telegram notifications
+* Designing reliable daily automation workflows
 
 ---
 
-## 📄 License
+## 📈 Impact
 
-This project is licensed under the MIT License.
+This workflow automates the delivery of daily inspirational quotes, eliminating the need for manual sharing while demonstrating practical API integration, scheduled automation, and message formatting with n8n.
 
 ---
 
-⭐ If you found this project helpful, consider giving it a star!
+## 📜 License
+
+MIT License
+
+---
+
+## 👨‍💻 Author
+
+**Belio C. Sinangote**
+
+BS Information Technology Student
+Cebu Technological University (CTU)
+
+GitHub: [https://github.com/belioautomation](https://github.com/belioautomation)
+
+This project is part of my **30-Day n8n Automation Portfolio**, showcasing practical workflow automation using n8n, APIs, and automation best practices.
